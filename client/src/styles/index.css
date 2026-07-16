@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-black;
+  }
+  body {
+    @apply bg-brutal-white text-black font-body antialiased;
+  }
+  ::selection {
+    @apply bg-brutal-yellow text-black;
+  }
+}
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn-brutal {
+    @apply inline-flex items-center justify-center gap-2 border-brutal border-black rounded-brutal
+           px-6 py-3 font-display font-bold text-black shadow-brutal
+           transition-all duration-150 ease-out
+           hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-lg
+           active:translate-x-0.5 active:translate-y-0.5 active:shadow-brutal-hover
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-brutal-sm {
+    @apply btn-brutal px-4 py-2 text-sm rounded-brutal-sm shadow-brutal-sm;
+  }
+
+  /* ---------- Cards ---------- */
+  .card-brutal {
+    @apply bg-white border-brutal border-black rounded-brutal shadow-brutal p-6
+           transition-all duration-150 ease-out;
+  }
+  .card-brutal-interactive {
+    @apply card-brutal hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal-lg cursor-pointer;
+  }
+
+  /* ---------- Inputs ---------- */
+  .input-brutal {
+    @apply w-full border-brutal border-black rounded-brutal-sm px-4 py-3 bg-white
+           font-body placeholder:text-black/40
+           focus:outline-none focus:ring-0 focus:-translate-x-0.5 focus:-translate-y-0.5
+           focus:shadow-brutal-sm transition-all duration-150;
+  }
+
+  /* ---------- Badges ---------- */
+  .badge-brutal {
+    @apply inline-flex items-center gap-1 border-2 border-black rounded-full px-3 py-1
+           text-xs font-bold font-display;
+  }
+}
